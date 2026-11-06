@@ -57,22 +57,39 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle Form Submission
   const registerForm = document.getElementById('registerForm');
   const formSuccess = document.getElementById('formSuccess');
+  const entryType = document.getElementById('entryType');
+  const teamName = document.getElementById('teamName');
+  const teamNameGroup = document.getElementById('teamNameGroup');
 
-  if (registerForm) {
-    registerForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      // Simulate form submission
-      const btn = registerForm.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-      
-      btn.textContent = 'Đang xử lý...';
-      btn.disabled = true;
-      
-      setTimeout(() => {
-        registerForm.classList.add('hidden');
-        formSuccess.classList.remove('hidden');
-      }, 1000);
+  if (registerForm && entryType && teamName && teamNameGroup && formSuccess) {
+    const memberGroups = [
+      document.getElementById('member2Fields'),
+      document.getElementById('member3Fields')
+    ];
+
+    const updateMemberFields = () => {
+      const memberCount = Number(entryType.value);
+      teamNameGroup.classList.toggle('hidden', memberCount === 1);
+      teamName.required = memberCount > 1;
+
+      memberGroups.forEach((group, index) => {
+        const isVisible = memberCount > index + 1;
+        group.classList.toggle('hidden', !isVisible);
+        group.querySelectorAll('input').forEach(input => {
+          input.disabled = !isVisible;
+          input.required = isVisible;
+        });
+      });
+    };
+
+    updateMemberFields();
+    entryType.addEventListener('change', updateMemberFields);
+
+    registerForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      registerForm.classList.add('hidden');
+      formSuccess.classList.remove('hidden');
+      formSuccess.focus();
     });
   }
 

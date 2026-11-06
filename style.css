@@ -29,11 +29,11 @@
   --glass-border: rgba(255, 255, 255, 0.4);
   
   /* Typography */
-  --font-family: 'Outfit', sans-serif;
+  --font-family: 'Be Vietnam Pro', Arial, sans-serif;
   
   /* Layout */
-  --container-width: 1200px;
-  --section-padding: 80px 0;
+  --container-width: 1400px;
+  --section-padding: 50px 0;
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -61,7 +61,7 @@ body {
   width: 100%;
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 50px;
 }
 
 .section-padding {
@@ -102,13 +102,13 @@ body {
 }
 
 .section-header {
-  margin-bottom: 50px;
+  margin-bottom: 36px;
   max-width: 700px;
   margin-inline: auto;
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 15px;
   color: var(--text-main);
@@ -277,8 +277,8 @@ body {
 /* Hero Section */
 .hero {
   position: relative;
-  padding-top: 140px;
-  padding-bottom: 80px;
+  padding-top: 112px;
+  padding-bottom: 56px;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -523,7 +523,7 @@ body {
 /* Tracks */
 .tracks-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -694,51 +694,195 @@ body {
 
 .register-card {
   width: 100%;
-  max-width: 600px;
-  padding: 50px;
+  max-width: 920px;
+  padding: 32px;
   text-align: center;
 }
 
 .register-card h2 {
-  font-size: 2.2rem;
-  margin-bottom: 16px;
+  font-size: 2rem;
+  margin-bottom: 10px;
   color: var(--text-main);
 }
 
 .register-card p {
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   color: var(--text-muted);
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   text-align: left;
 }
 
 .form-group label {
   display: block;
   font-weight: 600;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
 }
 
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
   width: 100%;
-  padding: 14px 16px;
+  padding: 10px 12px;
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 7px;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 0.95rem;
   transition: var(--transition);
   background: white;
 }
 
 .form-group input:focus,
-.form-group select:focus {
+.form-group select:focus,
+.form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 76px;
+}
+
+.form-section {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 18px;
+  margin: 0 0 16px;
+  text-align: left;
+}
+
+.form-section legend {
+  padding: 0 8px;
+  color: var(--primary);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 14px;
+}
+
+.form-group-wide {
+  grid-column: 1 / -1;
+}
+
+.member-card {
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background: var(--bg-light);
+}
+
+.member-card h3 {
+  margin-bottom: 10px;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.form-notice,
+.venue-note {
+  padding: 12px 14px;
+  border-left: 4px solid var(--secondary);
+  border-radius: 8px;
+  background: var(--secondary-light);
+  color: var(--text-main) !important;
+  text-align: left;
+}
+
+.form-notice {
+  margin: 0 0 16px;
+}
+
+#registerForm .btn-large {
+  padding: 11px 22px;
+  font-size: 1rem;
+}
+
+.venue-note {
+  max-width: 800px;
+  margin: 35px auto 0;
+}
+
+.product-guidelines {
+  margin-top: 32px;
+  padding: 28px;
+  border-radius: 16px;
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+}
+
+.product-guidelines h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.product-guidelines p + p {
+  margin-top: 12px;
+}
+
+.track-content ul {
+  margin-top: 14px;
+  padding-left: 20px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.track-content li + li {
+  margin-top: 8px;
+}
+
+.awards {
+  background: var(--bg-light);
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.award-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.award-rank {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.award-card h3 {
+  margin-bottom: 8px;
+}
+
+.award-card p {
+  color: var(--text-muted);
+}
+
+.award-card p strong {
+  color: var(--primary);
 }
 
 .form-success {
@@ -757,7 +901,7 @@ body {
 footer {
   background-color: var(--text-main);
   color: white;
-  padding-top: 80px;
+  padding-top: 56px;
 }
 
 .footer-content {
@@ -870,6 +1014,23 @@ footer {
 
   .about-grid, .tech-grid, .tracks-container {
     grid-template-columns: 1fr;
+  }
+
+  .register-card {
+    padding: 24px 16px;
+  }
+
+  .form-section {
+    padding: 14px 10px;
+  }
+
+  .form-grid,
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group-wide {
+    grid-column: auto;
   }
 
   .timeline::before {
