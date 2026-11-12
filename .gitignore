@@ -1,0 +1,10 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+registrations.db
+registrations.db-*
+node_modules/
+dist/
+package-lock.json
+

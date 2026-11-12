@@ -57,15 +57,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle Form Submission
   const registerForm = document.getElementById('registerForm');
   const formSuccess = document.getElementById('formSuccess');
+  const formError = document.getElementById('formError');
   const entryType = document.getElementById('entryType');
   const teamName = document.getElementById('teamName');
   const teamNameGroup = document.getElementById('teamNameGroup');
 
-  if (registerForm && entryType && teamName && teamNameGroup && formSuccess) {
+  if (registerForm && entryType && teamName && teamNameGroup && formSuccess && formError) {
     const memberGroups = [
       document.getElementById('member2Fields'),
       document.getElementById('member3Fields')
-    ];
+    ].filter(Boolean);
 
     const updateMemberFields = () => {
       const memberCount = Number(entryType.value);
@@ -85,11 +86,45 @@ document.addEventListener('DOMContentLoaded', () => {
     updateMemberFields();
     entryType.addEventListener('change', updateMemberFields);
 
-    registerForm.addEventListener('submit', (event) => {
+    registerForm.addEventListener('submit', async (event) => {
       event.preventDefault();
-      registerForm.classList.add('hidden');
-      formSuccess.classList.remove('hidden');
-      formSuccess.focus();
+      const submitButton = registerForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton.textContent;
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Đang gửi đăng ký...';
+      formError.classList.add('hidden');
+      formError.textContent = '';
+
+      try {
+        const response = await fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(registerForm)))
+        });
+        const result = await response.json();
+
+        if (!response.ok) {
+          const message = Array.isArray(result.detail)
+            ? result.detail.map(error => error.msg).join('; ')
+            : result.detail;
+          throw new Error(message || 'Không thể lưu đăng ký. Vui lòng thử lại.');
+        }
+
+        registerForm.classList.add('hidden');
+        formSuccess.classList.remove('hidden');
+        formSuccess.focus();
+      } catch (error) {
+        console.error('Không thể gửi đăng ký:', error);
+        formError.textContent = error instanceof TypeError
+          ? 'Không thể kết nối máy chủ. Vui lòng thử lại sau.'
+          : error.message;
+        formError.classList.remove('hidden');
+        formError.focus();
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
     });
   }
 

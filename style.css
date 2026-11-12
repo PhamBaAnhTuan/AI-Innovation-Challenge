@@ -892,6 +892,12 @@ body {
   border: 1px dashed var(--accent-green);
 }
 
+.form-error {
+  margin: 0 0 16px;
+  color: #b42318;
+  text-align: left;
+}
+
 .success-icon {
   font-size: 3rem;
   margin-bottom: 16px;
@@ -938,6 +944,18 @@ footer {
   text-align: center;
   color: #64748b;
   font-size: 0.9rem;
+}
+
+.admin-link {
+  color: inherit;
+  opacity: 0.35;
+  text-decoration: none;
+}
+
+.admin-link:hover,
+.admin-link:focus-visible {
+  color: white;
+  opacity: 1;
 }
 
 /* Animations */

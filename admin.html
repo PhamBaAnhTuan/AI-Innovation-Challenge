@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Quản trị đăng ký | AI Innovation Challenge</title>
+    <link rel="stylesheet" href="/admin.css">
+    <script type="module" src="/admin.js"></script>
+  </head>
+  <body>
+    <main class="admin-shell">
+      <header class="admin-header">
+        <div>
+          <p class="eyebrow" ><a class="eyebrow" href='/'>AI INNOVATION CHALLENGE · SEASON 1</a></p>
+          <h1>Quản lý đăng ký</h1>
+          <p class="subtitle">Danh sách đội thi và trạng thái hồ sơ bản mềm.</p>
+        </div>
+        <button id="logoutButton" class="button button-secondary hidden" type="button">Đăng xuất</button>
+      </header>
+
+      <section id="loginPanel" class="panel login-panel" aria-labelledby="loginHeading">
+        <h2 id="loginHeading">Đăng nhập quản trị</h2>
+        <p>Đăng nhập để xem và quản lý hồ sơ dự thi.</p>
+        <form id="loginForm">
+          <label for="username">Tài khoản</label>
+          <input id="username" name="username" type="text" autocomplete="username" required>
+          <label for="password">Mật khẩu</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <p id="loginError" class="message error hidden" role="alert"></p>
+          <button id="loginButton" class="button button-primary" type="submit">Đăng nhập</button>
+        </form>
+      </section>
+
+      <section id="dashboard" class="hidden" aria-label="Danh sách đăng ký">
+        <div class="toolbar">
+          <p id="registrationCount" class="count"></p>
+          <a class="button button-primary" href="/api/admin/registrations/export.xlsx">Xuất Excel</a>
+        </div>
+        <p id="dashboardMessage" class="message error hidden" role="alert"></p>
+        <div class="panel table-panel">
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Đội / hình thức</th>
+                  <th scope="col">Thành viên</th>
+                  <th scope="col">Liên hệ</th>
+                  <th scope="col">Sản phẩm</th>
+                  <th scope="col">Ngày đăng ký</th>
+                  <th scope="col">Đã nộp hồ sơ mềm</th>
+                </tr>
+              </thead>
+              <tbody id="registrationsBody"></tbody>
+            </table>
+            <p id="emptyState" class="empty-state hidden">Chưa có đội thi đăng ký.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

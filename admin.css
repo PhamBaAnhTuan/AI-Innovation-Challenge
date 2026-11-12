@@ -1,0 +1,253 @@
+:root {
+  color-scheme: light;
+  font-family: "Be Vietnam Pro", "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f3f6fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 360px;
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.admin-shell {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.admin-header,
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.admin-header {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #5469c8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+}
+
+.subtitle,
+.login-panel > p,
+.count {
+  color: #647087;
+}
+
+.subtitle,
+.login-panel > p {
+  margin-bottom: 0;
+}
+
+.panel {
+  overflow: hidden;
+  border: 1px solid #e1e7f0;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 26px rgb(23 32 51 / 5%);
+}
+
+.login-panel {
+  width: min(440px, 100%);
+  margin: 56px auto;
+  padding: 28px;
+}
+
+.login-panel h2 {
+  margin-bottom: 8px;
+}
+
+.login-panel form {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.login-panel label {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.login-panel input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cbd4e2;
+  border-radius: 8px;
+}
+
+.login-panel input:focus {
+  outline: 3px solid rgb(84 105 200 / 18%);
+  border-color: #5469c8;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 16px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.button-primary {
+  color: #fff;
+  background: #344cb1;
+}
+
+.button-primary:hover {
+  background: #293d98;
+}
+
+.button-secondary {
+  color: #344cb1;
+  background: #e9edfb;
+}
+
+.message {
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+
+.error {
+  color: #b42318;
+}
+
+.toolbar {
+  margin: 28px 0 14px;
+}
+
+.count {
+  margin-bottom: 0;
+}
+
+.table-panel {
+  margin-top: 14px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e9edf3;
+  vertical-align: top;
+}
+
+th {
+  color: #526078;
+  background: #f8f9fc;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+td {
+  min-width: 130px;
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.team-name,
+.product-name {
+  font-weight: 650;
+}
+
+.muted {
+  color: #6b778c;
+}
+
+.status-cell {
+  min-width: 160px;
+}
+
+.status-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.status-label input {
+  width: 17px;
+  height: 17px;
+  accent-color: #27854c;
+}
+
+.empty-state {
+  padding: 28px;
+  color: #647087;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .admin-shell {
+    padding: 28px 0;
+  }
+
+  .admin-header {
+    align-items: flex-start;
+  }
+
+  .login-panel {
+    margin: 36px auto;
+    padding: 22px;
+  }
+}

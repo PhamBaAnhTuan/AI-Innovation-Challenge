@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Innovation Challenge 2026 - Season 1</title>
+  <title>AI Innovation Challenge UDA DAKLAK</title>
+  <link rel="icon" type="image/png" href="./Images/logo_cuoc_thi.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +14,8 @@
   <!-- Header -->
   <header class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="#" class="logo">AI Innovation Challenge 2026<span> - Season 1</span></a>
+      <!-- <a href="#" class="logo">AI Innovation Challenge 2026<span> - Season 1</span></a> -->
+      <!-- <a href="#" class="logo">Khoa <span>Công nghệ thông tin</span></a> -->
       <nav class="nav-links">
         <a href="#about">Mục đích</a>
         <a href="#eligibility">Đối tượng</a>
@@ -37,9 +39,7 @@
     <div class="container hero-content">
       <div class="hero-text">
         <!-- <div class="badge fade-in-up">Cuộc thi sinh viên · 16/11–17/12/2026</div> -->
-        <h1 class="fade-in-up delay-1">AI Innovation Challenge<br><span class="highlight">Season 1 -</span>  2026</h1>
-        <!-- <p class="fade-in-up delay-2"><span class="highlight">AI kiến tạo tri thức – AI kết nối cộng đồng</span></p> -->
-        <!-- <p class="fade-in-up delay-2">AI kiến tạo tri thức – AI kết nối cộng đồng</p> -->
+        <h1 class="fade-in-up delay-1">AI Innovation Challenge 2026<br><span class="highlight">UDA DAKLAK</span>Season 1</h1>
         <div class="hero-actions fade-in-up delay-3">
           <a href="#register" class="btn btn-primary btn-large">Tham gia ngay</a>
         </div>
@@ -218,7 +218,7 @@
           </div>
         </div>
       </div>
-      <p class="venue-note"><strong>Hồ sơ dự thi:</strong> Nộp tại phòng 209 (Thầy Tuấn). Ban tổ chức công bố kênh nhận hồ sơ và xác nhận hồ sơ hợp lệ qua Fanpage Đại học Đông Á – Phân hiệu Đắk Lắk.</p>
+      <p class="venue-note"><strong>Hồ sơ dự thi:</strong> Nộp tại phòng 209. Ban tổ chức công bố kênh nhận hồ sơ và xác nhận hồ sơ hợp lệ qua Fanpage Đại học Đông Á – Phân hiệu Đắk Lắk.</p>
     </div>
   </section>
 
@@ -326,7 +326,40 @@
                 </div>
               </div>
             </div>
-
+            <div class="member-card hidden" id="member2Fields">
+              <h3>Thành viên 2</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="member2Name">Họ và tên</label>
+                  <input type="text" id="member2Name" name="member2Name">
+                </div>
+                <div class="form-group">
+                  <label for="member2StudentId">Mã số sinh viên</label>
+                  <input type="text" id="member2StudentId" name="member2StudentId">
+                </div>
+                <div class="form-group">
+                  <label for="member2Class">Lớp / ngành</label>
+                  <input type="text" id="member2Class" name="member2Class">
+                </div>
+              </div>
+            </div>
+            <div class="member-card hidden" id="member3Fields">
+              <h3>Thành viên 3</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="member3Name">Họ và tên</label>
+                  <input type="text" id="member3Name" name="member3Name">
+                </div>
+                <div class="form-group">
+                  <label for="member3StudentId">Mã số sinh viên</label>
+                  <input type="text" id="member3StudentId" name="member3StudentId">
+                </div>
+                <div class="form-group">
+                  <label for="member3Class">Lớp / ngành</label>
+                  <input type="text" id="member3Class" name="member3Class">
+                </div>
+              </div>
+            </div>
           </fieldset>
           <fieldset class="form-section">
             <legend>Thông tin sản phẩm dự thi</legend>
@@ -359,12 +392,13 @@
             </div>
           </fieldset>
           <p class="form-notice">Sau khi hoàn tất, vui lòng nộp phiếu đăng ký và thuyết minh tại phòng 209; Ban tổ chức xác nhận hồ sơ qua Fanpage Phân hiệu.</p>
-          <button type="submit" class="btn btn-primary btn-large btn-block">Kiểm tra phiếu đăng ký</button>
+          <p id="formError" class="form-error hidden" role="alert" aria-live="assertive" tabindex="-1"></p>
+          <button type="submit" class="btn btn-primary btn-large btn-block">Gửi đăng ký</button>
         </form>
         <div id="formSuccess" class="form-success hidden" role="status" aria-live="polite" tabindex="-1">
           <div class="success-icon">✅</div>
-          <h3>Phiếu đã được kiểm tra</h3>
-          <p>Vui lòng nộp phiếu đăng ký cùng bản thuyết minh ý tưởng (tối đa 05 trang) tại phòng 209 (Thầy Tuấn). Ban tổ chức công bố kênh nhận hồ sơ và xác nhận hồ sơ hợp lệ qua Fanpage Đại học Đông Á – Phân hiệu Đắk Lắk.</p>
+          <h3>Đăng ký đã được lưu thành công</h3>
+          <p>Thông tin đăng ký đã được lưu. Vui lòng nộp phiếu đăng ký cùng bản thuyết minh ý tưởng (tối đa 05 trang) tại phòng 209; Ban tổ chức sẽ xác nhận hồ sơ hợp lệ qua Fanpage Đại học Đông Á – Phân hiệu Đắk Lắk.</p>
         </div>
       </div>
     </div>
@@ -374,7 +408,7 @@
   <footer>
     <div class="container footer-content">
       <div class="footer-col">
-        <h3>UDA AI <span>Challenge</span></h3>
+        <h3>AI Innovation Challenge 2026<span> UDA DAKLAK</span> - Season 1</h3>
         <p>Sân chơi thúc đẩy ứng dụng AI trong học tập, nghiên cứu và giải quyết các vấn đề thực tiễn của cộng đồng.</p>
       </div>
       <div class="footer-col">
@@ -383,12 +417,12 @@
       </div>
       <div class="footer-col">
         <h4>Liên Hệ</h4>
-        <p>Hồ sơ đăng ký: Phòng 209 (Thầy Tuấn)<br>Kênh xác nhận: Fanpage Đại học Đông Á – Phân hiệu Đắk Lắk</p>
+        <p>Hồ sơ đăng ký: Phòng 209<br>Kênh xác nhận: Fanpage Đại học Đông Á – Phân hiệu Đắk Lắk</p>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>&copy; 2026 UDA AI Innovation Challenge – Season 1.</p>
+        <p>&copy; 2026 AI Innovation Challenge UDA DAKLAK – Season 1. <a class="admin-link" href="/admin" aria-label="Cổng quản trị" title="Cổng quản trị">·</a></p>
       </div>
     </div>
   </footer>
