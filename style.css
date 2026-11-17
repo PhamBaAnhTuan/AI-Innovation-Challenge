@@ -469,6 +469,10 @@ body {
   color: var(--text-muted);
 }
 
+.documents-download {
+  margin-top: 32px;
+}
+
 /* Tech Grid */
 .tech-grid {
   display: grid;
